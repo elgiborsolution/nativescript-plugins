@@ -1,0 +1,18 @@
+<ModalStack>
+  <StackLayout marginLeft="24dp" marginRight="24dp" backgroundColor="white" borderRadius="10dp">
+    <GridLayout rows="auto, auto, auto" columns="*, *" marginLeft="24dp" marginRight="24dp">
+      <Label row="0" col="0" marginTop="18dp" fontSize="14dp" [text]="drawingPadProperties.signatureTitle" textWrap="true"></Label>
+      <Image row="0" col="1" marginTop="16dp" horizontalAlignment="right" src="res://sdp_close" width="25dp" height="25dp" (tap)="closeModal()"></Image>
+
+      <DrawingPad row="1" col="0" colspan="2" marginTop="30dp" height="179dp" borderWidth="1dp" borderColor="#E8E8E8" borderRadius="8dp" id="drawing-pad" (loaded)="onDrawingPadLoad($event)"> </DrawingPad>
+
+      <GridLayout row="2" col="0" colspan="2" rows="auto" columns="*, auto, *" marginTop="20dp" marginBottom="34dp">
+        <Button row="0" col="0" margin="6dp" fontSize="14dp" color="{{ drawingPadProperties.negativeButtonTextColor }}" backgroundColor="{{ drawingPadProperties.negativeButtonBgColor }}" borderWidth="1dp" borderColor="{{ drawingPadProperties.negativeButtonBorderColor }}" borderRadius="8dp" [text]="drawingPadProperties.negativeButtonText" (tap)="clearSignature()"> </Button>
+
+        <ContentView row="0" col="1" width="24dp"></ContentView>
+
+        <Button row="0" col="2" margin="6dp" fontSize="14dp" color="{{ drawingPadProperties.positiveButtonTextColor }}" backgroundColor="{{ drawingPadProperties.positiveButtonBgColor }}" borderWidth="1dp" borderColor="{{ drawingPadProperties.negativeButtonBorderColor }}" borderRadius="8dp" [text]="drawingPadProperties.positiveButtonText" (tap)="save()"> </Button>
+      </GridLayout>
+    </GridLayout>
+  </StackLayout>
+</ModalStack>

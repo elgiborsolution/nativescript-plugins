@@ -55,12 +55,19 @@ module.exports = {
       },
     },
     '⚙️': {
-      script: `npx cowsay "@nativescript/* packages will keep your ⚙️ cranking"`,
-      description: '_____________  @nativescript/*  _____________',
+      script: `npx cowsay "@elgiborsolution/* packages will keep your ⚙️ cranking"`,
+      description: '_____________  @elgiborsolution/*  _____________',
     },
     // packages
     // build output is always in dist/packages
-    '@nativescript': {
+    '@elgiborsolution': {
+      // @elgiborsolution/signature-drawing-pad
+      'signature-drawing-pad': {
+        build: {
+          script: 'nx run signature-drawing-pad:build.all',
+          description: '@elgiborsolution/signature-drawing-pad: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -71,8 +78,12 @@ module.exports = {
       description: '_____________  Focus (VS Code supported)  _____________',
     },
     focus: {
+      'signature-drawing-pad': {
+        script: 'nx run signature-drawing-pad:focus',
+        description: 'Focus on @elgiborsolution/signature-drawing-pad',
+      },
       reset: {
-        script: 'nx g @nativescript/plugin-tools:focus-packages',
+        script: 'nx g @elgiborsolution/plugin-tools:focus-packages',
         description: 'Reset Focus',
       },
     },

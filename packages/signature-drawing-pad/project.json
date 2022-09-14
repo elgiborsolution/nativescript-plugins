@@ -1,0 +1,64 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/signature-drawing-pad",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/signature-drawing-pad",
+        "tsConfig": "packages/signature-drawing-pad/tsconfig.json",
+        "packageJson": "packages/signature-drawing-pad/package.json",
+        "main": "packages/signature-drawing-pad/index.d.ts",
+        "assets": [
+          "packages/signature-drawing-pad/*.md",
+          "packages/signature-drawing-pad/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/signature-drawing-pad/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts signature-drawing-pad"],
+        "parallel": false
+      },
+      "outputs": ["dist/packages/signature-drawing-pad"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages signature-drawing-pad"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/signature-drawing-pad/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

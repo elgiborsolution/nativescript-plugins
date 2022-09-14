@@ -1,0 +1,45 @@
+{
+  "name": "@elgiborsolution/signature-drawing-pad",
+  "version": "1.0.0",
+  "description": "Shared component to show modal page to write digital signature as a photo.",
+  "main": "index",
+  "typings": "index.d.ts",
+  "nativescript": {
+    "platforms": {
+      "ios": "6.0.0",
+      "android": "6.0.0"
+    }
+  },
+  "dependencies": {
+    "@nativescript-community/drawingpad": "4.1.0",
+    "nativescript-windowed-modal": "7.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elgiborsolution/nativescript-plugins.git"
+  },
+  "keywords": [
+    "NativeScript",
+    "JavaScript",
+    "TypeScript",
+    "iOS",
+    "Android"
+  ],
+  "author": {
+    "name": "Elgibor Solution",
+    "email": "info@elgibor-solution.com"
+  },
+  "contributors": [
+    {
+      "name": "Febri Arief",
+      "email": "febriarief6661@gmail.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/elgiborsolution/nativescript-plugins/issues"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/elgiborsolution/nativescript-plugins",
+  "readmeFilename": "README.md",
+  "bootstrapper": "@nativescript/plugin-seed"
+}

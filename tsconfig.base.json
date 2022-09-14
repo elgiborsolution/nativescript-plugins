@@ -20,7 +20,10 @@
       }
     ],
     "paths": {
-      "@demo/shared": ["tools/demo/index.ts"]
+      "@demo/shared": ["tools/demo/index.ts"],
+      "@elgiborsolution/*": ["packages/*"],
+      "@elgiborsolution/signature-drawing-pad": ["packages/signature-drawing-pad/index.d.ts"],
+      "@elgiborsolution/signature-drawing-pad/angular": ["packages/signature-drawing-pad/angular/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

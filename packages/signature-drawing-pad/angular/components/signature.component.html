@@ -1,0 +1,11 @@
+<StackLayout>
+  <ContentView [visibility]="signatureImage ? 'collapse' : 'visible'" height="{{ signaturePlaceholderOptions.height }}dp" width="100%" borderWidth="1dp" borderColor="{{ signaturePlaceholderOptions.borderColor }}" borderRadius="{{ signaturePlaceholderOptions.borderRadius }}dp">
+    <Label class="__vertical-center __text-center __text-silver __f12" [text]="signaturePlaceholderOptions.placeholder"></Label>
+  </ContentView>
+
+  <Image [visibility]="signatureImage ? 'visible' : 'collapse'" [src]="signatureImage" height="{{ signaturePlaceholderOptions.height }}dp" width="100%" borderWidth="1dp" borderColor="{{ signaturePlaceholderOptions.borderColor }}" borderRadius="{{ signaturePlaceholderOptions.borderRadius }}dp"></Image>
+
+  <ContentView class="__horizontal-right" backgroundColor="{{ signatureButtonOptions.backgroundColor }}" marginTop="-28dp" width="56dp" height="56dp" borderRadius="100%" (tap)="openModal()">
+    <Image src="res://sdp_signature" width="26dp" height="26dp"></Image>
+  </ContentView>
+</StackLayout>
